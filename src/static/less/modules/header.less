@@ -1,0 +1,55 @@
+@import "../variable";
+
+header {
+  background-color: @header-color;
+  padding: 0 20px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  h1 {
+    font-size: 0;
+    float: left;
+  }
+  .user-bar {
+    float: right;
+    line-height: 50px;
+    cursor: default;
+    .el-dropdown {
+      .el-dropdown-link {
+        display: block;
+        height: 50px;
+      }
+      .user-icon {
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+        margin-right: 5px;
+        background: url("../../images/header/user.png") no-repeat;
+        vertical-align: middle;
+      }
+      color: @header-font-color;
+    }
+  }
+}
+
+.header-drop.el-dropdown-menu {
+  margin-top: 0;
+  border-top: none;
+  box-shadow: none;
+  background-color: @header-color;
+  border-radius: 0;
+  .el-dropdown-menu__item {
+    padding: 0 20px;
+    color: @header-font-color;
+    &:hover {
+      background-color: @header-hover-color;
+    }
+  }
+
+  .popper__arrow {
+    display: none;
+  }
+}

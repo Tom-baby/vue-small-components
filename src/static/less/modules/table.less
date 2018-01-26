@@ -1,0 +1,173 @@
+@th-bg: #f4f4f4;
+@th-height: 36px;
+@td-height: 36px;
+@cell-line-height: 24px;
+@th-fontSize: 12px;
+@cell-padding-left-right: 21px;
+@input-border-bottom-color: #3498db;
+@td-border-width: 1px;
+
+.el-table {
+    .el-checkbox {
+        font-size: 0;
+    }
+
+    td, th.is-leaf {
+        border: none;
+        a {
+            color: #3498db;
+            display: block;
+        }
+    }
+
+    th {
+        background-color: @th-bg;
+        padding: (@th-height - @cell-line-height)/2px 0;
+        > .cell {
+            line-height: @cell-line-height;
+            color: #000;
+            font-size: @th-fontSize;
+            padding: 0 @cell-padding-left-right;
+        }
+    }
+
+    &.edit-table {
+        .el-table__body-wrapper .el-table__body td > .cell {
+            color: #8e8e8e;
+        }
+    }
+
+    .el-table-column--selection {
+        > .cell {
+            font-size: 0 !important;
+        }
+    }
+
+    &.el-table--striped {
+        .el-table__body {
+            tr.el-table__row--striped td {
+                background-color: @th-bg;
+                .el-input {
+                    .el-input__inner {
+                        &:focus {
+                            background-color: @th-bg;
+                        }
+                    }
+                }
+            }
+
+            td {
+                box-sizing: border-box;
+                padding: (@td-height - @cell-line-height)/2px - @td-border-width 0;
+                font-size: 0;
+                border-top: 1px solid transparent;
+                border-bottom: 1px solid transparent;
+                > .cell {
+                    line-height: @cell-line-height;
+                    color: #000;
+                    font-size: @th-fontSize;
+                    padding: 0 @cell-padding-left-right;
+                }
+            }
+
+            tr:hover td {
+                background-color: #e6f2fb;
+                border-top: 1px solid #c8e1f1;
+                border-bottom: 1px solid #c8e1f1;
+                transition: all 0s;
+                .el-input {
+                    .el-input__inner {
+                        transition: all 0s;
+                        &:focus {
+                            background-color: #e6f2fb;
+                        }
+                    }
+                }
+            }
+
+            tr {
+                &.current-row {
+                    td {
+                        background-color: #ecf5ff;
+                        border-top: 1px solid #c8e1f1;
+                        border-bottom: 1px solid #c8e1f1;
+                    }
+                }
+            }
+        }
+    }
+
+    .el-input {
+        border: 0;
+        width: 100%;
+        margin-right: 0;
+        .el-input__suffix {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.is-disabled {
+            .el-input__inner {
+                color: #8e8e8e;
+                background-color: transparent;
+            }
+        }
+
+        .el-input__inner {
+            transition: all 0.15s;
+            outline: none;
+            width: 100%;
+            margin-right: 0;
+            box-sizing: border-box;
+            height: @cell-line-height;
+            border: 0;
+            border-bottom: @td-border-width solid transparent;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            color: #000;
+            &:focus {
+                background-color: #fff;
+                border-bottom: @td-border-width solid @input-border-bottom-color;
+                ~ .el-input__suffix {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        .el-input__prefix {
+            left: -5px;
+        }
+
+        &.el-input--prefix {
+            .el-input__inner {
+                padding-left: 25px;
+            }
+        }
+    }
+
+    .amount-input-wrapper {
+        &.has-icon {
+            .el-input {
+                border: 0;
+            }
+
+            .el-input__inner {
+                padding-left: 15px;
+            }
+
+            .el-input-group__prepend {
+                background-color: transparent;
+                padding: 0;
+                position: absolute;
+                left: 0;
+                top: 3px;
+            }
+        }
+
+        .el-input.is-disabled{
+            background-color: transparent;
+        }
+    }
+}

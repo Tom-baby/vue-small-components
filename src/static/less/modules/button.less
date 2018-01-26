@@ -1,0 +1,86 @@
+@import "../variable";
+
+@button-default-border-color: #5092cf;
+@button-default-color: @blue;
+@button-max-width: 50px;
+
+
+.el-button {
+    height: @input-height;
+    vertical-align: bottom;
+    min-width: @button-max-width;
+    padding: 0 10px;
+    border-radius: @input-border-radius;
+    font-size: 12px;
+    margin-right: 10px;
+
+    +.el-button{
+        margin-left: 0;
+    }
+
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+.el-button--default:not(.el-button--primary){
+    border: 1px solid @button-default-border-color;
+    color: @button-default-color;
+    font-size: 12px;
+    background-color: transparent;
+    a{
+        color: @button-default-color;
+    }
+
+    &:hover, &:focus {
+        border: 1px solid darken(@button-default-border-color, 15%);
+        background-color: transparent;
+        color: darken(@button-default-color, 15%);
+
+        a{
+            color: darken(@button-default-color, 15%);
+        }
+    }
+}
+
+.el-button--primary {
+    background-color: @blue;
+    color: #fff;
+    &:focus{
+        color: #fff;
+    }
+}
+
+.el-button--info {
+    background-color: #d6eaf8;
+    border: 0;
+    color: #3498db;
+    &:hover, &:focus {
+        background-color: lighten(@blue, 40%);
+        color: #3498db;
+    }
+}
+
+.btn-toggle {
+    display: inline-block;
+    line-height: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid @input-border-color;
+    width: 26px;
+    height: @input-height;
+    border-radius: @input-border-radius;
+    margin-right: @input-margin-right;
+
+    .el-select__caret {
+        color: #c0c4cc;
+        font-size: 14px;
+        transform: rotateZ(180deg);
+        transition: transform .3s,-webkit-transform .3s;
+    }
+
+    .is-reverse{
+        transform: rotateZ(0);
+    }
+}
+

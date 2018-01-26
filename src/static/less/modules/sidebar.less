@@ -1,0 +1,100 @@
+@import "../variable";
+
+.side-bar {
+  top: @header-height;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  width: @side-width;
+  color: #fff;
+  background-color: @side-bg;
+  z-index: @zIndex1;
+  .contract, .order, .debit, .storage, .base, .user {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    background-image: url("../../images/sidebar/icons.png");
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+
+  .el-menu {
+    border-right: none;
+    .el-menu-item:focus, .el-menu-item:hover {
+      background-color: transparent;
+    }
+    .el-menu-item {
+      min-width: 100%;
+      &:hover {
+        background-color: @side-item-color;
+      }
+      &.is-active {
+        background-color: @side-item-color;
+      }
+      &.is-active {
+        color: #3498db;
+      }
+      &:focus {
+        //background: none!important;
+      }
+    }
+
+    .el-submenu__title {
+      &:hover {
+        background-color: @side-item-color;
+      }
+    }
+
+    .el-submenu__title .contract {
+      background-position: -36px 0;
+    }
+
+    .el-submenu__title .order {
+      background-position: 0 -18px;
+    }
+
+    .el-submenu__title .storage {
+      background-position: -36px -18px;
+    }
+
+    .el-submenu__title .debit {
+      background-position: 0 -36px;
+    }
+
+    .el-submenu__title .base {
+      background-position: -36px -36px;
+    }
+
+    .el-submenu__title .user {
+      background-position: 0 -54px;
+    }
+
+    .is-opened {
+      .el-submenu__title {
+        .contract {
+          background-position: -54px 0;
+        }
+
+        .order {
+          background-position: -18px -18px;
+        }
+
+        .storage {
+          background-position: -54px -18px;
+        }
+
+        .debit {
+          background-position: -18px -36px;
+        }
+
+        .base {
+          background-position: -54px -36px;
+        }
+
+        .user {
+          background-position: -18px -54px;
+        }
+      }
+    }
+  }
+}

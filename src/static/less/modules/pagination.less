@@ -1,0 +1,47 @@
+@height: 24px;
+.el-pagination {
+    text-align: right;
+    padding: 15px 60px;
+    color: #000;
+
+    .el-pagination__sizes {
+        .el-select .el-input .el-input__inner {
+            height: @height;
+        }
+    }
+
+    .el-pagination__editor.el-input .el-input__inner {
+        height: @height;
+        line-height: @height;
+    }
+
+    .el-pagination__editor {
+        height: @height;
+        line-height: @height;
+    }
+
+    li {
+        height: @height;
+        min-width: 30px;
+        line-height: @height;
+    }
+
+    .btn-next, .btn-prev {
+        height: @height;
+        line-height: @height;
+    }
+
+    .el-pagination__total {
+        height: @height;
+        line-height: @height;
+    }
+
+    button, span:not([class*=suffix]) {
+        height: @height;
+        line-height: @height;
+    }
+
+    .el-pagination__jump {
+        margin-left: 15px;
+    }
+}

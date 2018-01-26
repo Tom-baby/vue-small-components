@@ -1,0 +1,83 @@
+@import "../variable";
+
+@range-date-width: 550px;
+
+.el-input__inner {
+    border-radius: @input-border-radius;
+    border: 1px solid @input-border-color;
+    height: @input-height;
+    padding: 0 @input-lr-padding;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    &:focus {
+        opacity: 1 !important;
+    }
+}
+
+.el-date-editor {
+    .el-range-input {
+        font-size: 12px;
+    }
+}
+
+.el-input {
+    width: @input-width;
+    margin-right: @input-margin-right;
+    /* vertical-align: bottom;*/
+
+    &.is-disabled {
+        border: 0;
+        .el-input__inner {
+            background-color: #f0f0f0;
+            border: 0;
+            color: @gray2;
+        }
+    }
+
+    &.input-large {
+        width: @input-large-width;
+    }
+}
+
+.el-date-range-picker {
+    max-width: @range-date-width;
+
+    .el-date-table td {
+        div {
+            height: 20px;
+            padding: 0;
+            span {
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.el-date-picker {
+    max-width: @range-date-width/2;
+    .el-date-picker__header {
+        margin-bottom: 0;
+    }
+    .el-picker-panel__content {
+        max-width: @range-date-width/2 - 30;
+        margin-top: 0;
+    }
+
+    .el-date-table {
+        td {
+            div {
+                height: 20px;
+                padding: 0;
+                span {
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
