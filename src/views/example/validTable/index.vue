@@ -6,9 +6,6 @@
 		
 		<div class="page-content">
 			<div class="tool-wrapper">
-				<el-button @click="getQueryValue">获取下拉筛选条件的值</el-button>
-				<el-button @click="resetDefault">重置下拉筛选条件的值</el-button>
-				<el-button @click="clear">清空下拉筛选条件的值</el-button>
 				<el-button @click="checkAllValid()">整体表单验证</el-button>
 			</div>
 			
@@ -259,18 +256,6 @@
 				}, {
 					value: '选项5',
 					label: '北京烤鸭'
-				}, {
-					value: '选项5',
-					label: '北京烤鸭'
-				}, {
-					value: '选项5',
-					label: '北京烤鸭'
-				}, {
-					value: '选项5',
-					label: '北京烤鸭'
-				}, {
-					value: '选项5',
-					label: '北京烤鸭'
 				}],
 				value: '选项1',
 				input: '',
@@ -302,21 +287,6 @@
 				let a = Number(value.validVal);
 				a++;
 				value.validVal = a;
-			},
-			getQueryValue() {
-				console.log(this.$refs.queryPop.getQueryValue());
-			},
-			resetDefault() {
-				this.$refs.queryPop.resetDefault();
-			},
-			clear() {
-				this.$refs.queryPop.clear();
-			},
-			submitHandle() {
-				console.log('submit');
-			},
-			indexMethod(index) {
-				return index;
 			}
 		}
 	}

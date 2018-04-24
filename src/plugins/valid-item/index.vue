@@ -30,13 +30,7 @@
 				}
 			}
 		},
-		provide() {
-			return {
-				ElFormItem: this
-			};
-		},
 		mixins: [emitter],
-		inject: ['Validator'],
 		data() {
 			return {
 				failValid: false,
@@ -44,16 +38,11 @@
 				tipShow: false,
 				defaultValidRules: {
 					isValid: true,//是否验证
-					required:
-						true,//是否是必填
-					requiredTip:
-						'必须填写该信息',//如果是必填，未填写显示的信息
-					reg:
-						null,//验证规则或正则表达式
-					regTip:
-						'请输入正确格式的信息'//验证规则失败时显示的信息
-				}
-				,
+					required: true,//是否是必填
+					requiredTip: '必须填写该信息',//如果是必填，未填写显示的信息
+					reg: null,//验证规则或正则表达式
+					regTip: '请输入正确格式的信息'//验证规则失败时显示的信息
+				},
 				errorTip: ''
 			}
 		},
@@ -87,7 +76,7 @@
 			valid(notShowError) {//验证表单,自身调用,validator组件也会在外部调用此函数
 				const rules = this.rules;
 				if (rules.isValid) {
-					if (rules.required && !this.value) {
+					if (rules.required && !this.value && this.value !== 0) {
 						this.validFail(rules.requiredTip, notShowError);
 						return false;
 					}

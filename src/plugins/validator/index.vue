@@ -9,11 +9,6 @@
 		name: 'Validator',
 		componentName: 'Validator',
 		props: ['tabName'],
-		provide() {
-			return {
-				Validator: this,
-			};
-		},
 		data() {
 			return {
 				fields: []
@@ -60,14 +55,11 @@
 			},
 			changeTabStyle(valid) {
 				if (this.tabName) {
-					this.changeTabStyle(this.tabName, valid);
-				}
-			},
-			changeTabStyle: function (id, valid) {
-				if (valid) {
-					document.getElementById(`tab-${id}`).style.color = '#000';
-				} else {
-					document.getElementById(`tab-${id}`).style.color = 'red';
+					if (valid) {
+						document.getElementById(`tab-${this.tabName}`).style.color = '#000';
+					} else {
+						document.getElementById(`tab-${this.tabName}`).style.color = 'red';
+					}
 				}
 			},
 			valid() {//需要验证的子组件需要提供一个valid方法

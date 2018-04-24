@@ -22,10 +22,10 @@ Vue.use(AmountInput);
 Vue.prototype.$confirm = confirm;
 console.log('APP', App);
 
-
 const app = new Vue({
 	el: '#app',
 	router,
 	store,
 	...App
 });
+
