@@ -1,14 +1,10 @@
 <template>
-	<div class="valid-item"
-	     :class="{'inp-wrapper':true,'inp-error-wrapper':failValid}">
+	<div :class="{'valid-item inp-wrapper':true,'inp-error-wrapper':failValid}">
 		<div :class="{info:true,hide:!failValid}" @mouseover="failValid = true">{{errorTip}}</div>
 		<el-tooltip class="item" :disabled="!failValid" effect="dark" :content="errorTip"
 		            placement="bottom" ref="slot">
-			<div @click="tipShow = !tipShow">
-				<slot></slot>
-			</div>
+			<slot></slot>
 		</el-tooltip>
-	
 	</div>
 </template>
 
@@ -35,7 +31,6 @@
 			return {
 				failValid: false,
 				rules: {},
-				tipShow: false,
 				defaultValidRules: {
 					isValid: true,//是否验证
 					required: true,//是否是必填
